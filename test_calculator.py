@@ -15,3 +15,13 @@ class TestStringCalculator(unittest.TestCase):
     def test_string_calculator_with_new_lines(self):
         input_string = "1\n2\n3\n"
         self.assertEqual(string_calculator(input_string), 6)
+
+    def test_string_calculator_with_custom_delimiter(self):
+        input_string = "//;\n1;2" 
+        self.assertEqual(string_calculator(input_string), 3)
+
+    def test_string_calculator_negative_numbers(self):
+        input_string = "1,-2,3,-4"
+        expected_message = "Negative numbers not allowed: -2, -4"
+        with self.assertRaisesRegex(ValueError, expected_message):
+            string_calculator(input_string)
