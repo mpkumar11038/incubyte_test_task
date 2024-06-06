@@ -1,9 +1,9 @@
 import unittest
-from custom_calculator import sum_of_string
+from custom_calculator import string_calculator
 
 
-class TestSumOfString(unittest.TestCase):
+class TestStringCalculator(unittest.TestCase):
 
-    def test_sum_of_string(self):
+    def test_string_calculator(self):
         input_string = "1,2,3,4,5"
-        self.assertEqual(sum_of_string(input_string), 15)
+        self.assertEqual(string_calculator(input_string), 15)
